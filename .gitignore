@@ -1,0 +1,6 @@
+# Don't track content of these folders
+
+Elegant-Algorithms.iml
+
+out/
+.idea/
