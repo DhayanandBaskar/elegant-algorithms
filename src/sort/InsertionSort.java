@@ -3,6 +3,7 @@ package sort;
 /**
  * Time Complexity  - O(n^2)
  * Space Complexity  - In-place sorting O(1)
+ * Stable Sort
  *
  * Advantage over Selection sort - Insertion sort does less operations on a already sorted or mostly in order list of elements
  */
