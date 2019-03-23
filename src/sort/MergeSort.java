@@ -2,7 +2,7 @@ package sort;
 
 /**
  * Time complexity - O(n log n)
- * Space complexity - Not in place - O(n)
+ * Space complexity - Not in place - O(n) - auxiliary array
  * Stable Sort
  */
 

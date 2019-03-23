@@ -1,5 +1,7 @@
 package sort;
 
+import static utils.Util.swap;
+
 /**
  * Time Complexity  - O(n^2)
  * Space Complexity  - In-place sorting O(1)
@@ -17,11 +19,5 @@ public class SelectionSort {
             }
             swap(a, i, minIndex);
         }
-    }
-
-    private void swap(int[] a, int i, int j) {
-        int temp = a[i];
-        a[i] = a[j];
-        a[j] = temp;
     }
 }

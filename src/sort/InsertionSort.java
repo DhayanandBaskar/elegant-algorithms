@@ -1,5 +1,7 @@
 package sort;
 
+import static utils.Util.swap;
+
 /**
  * Time Complexity  - O(n^2)
  * Space Complexity  - In-place sorting O(1)
@@ -16,11 +18,5 @@ public class InsertionSort {
                 if(a[j] < a[j-1]) swap(a, j, j-1);
             }
         }
-    }
-
-    private void swap(int[] a, int i, int j) {
-        int temp = a[i];
-        a[i] = a[j];
-        a[j] = temp;
     }
 }
