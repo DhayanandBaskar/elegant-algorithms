@@ -7,7 +7,7 @@ import static utils.Util.swap;
  * Space Complexity  - In-place sorting O(1)
  * Stable Sort
  *
- * Advantage over Selection sort - Insertion sort does less operations on a already sorted or mostly in order list of elements
+ * Advantage over QuickSelect sort - Insertion sort does less operations on a already sorted or mostly in order list of elements
  */
 
 public class InsertionSort {

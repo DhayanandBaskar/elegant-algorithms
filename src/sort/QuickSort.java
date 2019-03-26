@@ -23,7 +23,7 @@ public class QuickSort {
         sort(a, p + 1, end);
     }
 
-    private int pivot(int[] a, int start, int end) {
+    public int pivot(int[] a, int start, int end) {
         int i = start, j = end + 1, p = start;
         while (true) {
             while (a[++i] < a[p])

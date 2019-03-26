@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertArrayEquals;
 
-public class SelectionSortTest {
+public class QuickSelectSortTest {
 
     @Test
     public void shouldSortTheGivenArray() {
