@@ -11,7 +11,7 @@ public class QuickUnion {
     int[] store;
     int[] size;
 
-    QuickUnion(int n) {
+    public QuickUnion(int n) {
         store = new int[n];
         size = new int[n];
         for (int i = 0; i < n; i++) {
