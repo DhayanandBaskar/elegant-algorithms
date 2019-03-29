@@ -12,6 +12,24 @@ import java.util.List;
  */
 
 public class KruskalsMST {
+
+    public static class Edge implements Comparable{
+        int vertexOne;
+        int vertexTwo;
+        int cost;
+
+        Edge(int vertexOne, int vertexTwo, int cost) {
+            this.vertexOne = vertexOne;
+            this.vertexTwo = vertexTwo;
+            this.cost = cost;
+        }
+
+        @Override
+        public int compareTo(@NotNull Object o) {
+            return this.cost - ((Edge) o).cost;
+        }
+    }
+
     public List<Edge> mst(List<Edge> graph) {
         List<Edge> mst = new ArrayList<>();
         Collections.sort(graph);
@@ -23,22 +41,5 @@ public class KruskalsMST {
             }
         }
         return mst;
-    }
-}
-
-class Edge implements Comparable{
-    int vertexOne;
-    int vertexTwo;
-    int cost;
-
-    Edge(int vertexOne, int vertexTwo, int cost) {
-        this.vertexOne = vertexOne;
-        this.vertexTwo = vertexTwo;
-        this.cost = cost;
-    }
-
-    @Override
-    public int compareTo(@NotNull Object o) {
-        return this.cost - ((Edge) o).cost;
     }
 }

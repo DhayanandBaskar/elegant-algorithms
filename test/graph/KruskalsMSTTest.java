@@ -4,6 +4,8 @@ import org.junit.Test;
 
 import java.util.*;
 
+import graph.KruskalsMST.Edge;
+
 import static org.junit.Assert.*;
 
 public class KruskalsMSTTest {
@@ -15,7 +17,7 @@ public class KruskalsMSTTest {
         HashSet<String> mstString = printableMST(mst);
         System.out.println(mstString);
         String[] expected = {"C<--5-->E", "D<--6-->F", "A<--7-->B", "E<--9-->G", "A<--5-->D", "B<--7-->E"};
-        for(String e: expected) {
+        for (String e : expected) {
             assertTrue(mstString.contains(e));
         }
     }
@@ -23,7 +25,7 @@ public class KruskalsMSTTest {
     private HashSet<String> printableMST(List<Edge> mst) {
         Map<Integer, String> idToName = getEdgeIdToName();
         HashSet<String> mstString = new HashSet<>();
-        for(Edge e : mst) {
+        for (Edge e : mst) {
             mstString.add(idToName.get(e.vertexOne) + "<--" + e.cost + "-->" + idToName.get(e.vertexTwo));
         }
         return mstString;
