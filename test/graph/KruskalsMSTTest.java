@@ -24,7 +24,7 @@ public class KruskalsMSTTest {
         Map<Integer, String> idToName = getEdgeIdToName();
         HashSet<String> mstString = new HashSet<>();
         for(Edge e : mst) {
-            mstString.add(idToName.get(e.u) + "<--" + e.cost + "-->" + idToName.get(e.v));
+            mstString.add(idToName.get(e.vertexOne) + "<--" + e.cost + "-->" + idToName.get(e.vertexTwo));
         }
         return mstString;
     }

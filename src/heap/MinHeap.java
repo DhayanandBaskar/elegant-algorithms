@@ -20,13 +20,6 @@ public class MinHeap {
         swim(index);
     }
 
-    private void swim(int k) {
-        while (k / 2 != 0 && store[k] < store[k / 2]) {
-            swap(store, k, k / 2);
-            k = k / 2;
-        }
-    }
-
     public int pop() {
         swap(store, 1, index--);
         sink(1);
@@ -37,13 +30,20 @@ public class MinHeap {
         return store[1];
     }
 
-    private void sink(int k) {
-        while (k * 2 <= index) {
-            int j = k * 2;
-            if (j < index && store[j] > store[j + 1]) j++;
-            if (store[k] < store[j]) break;
-            swap(store, k, j);
-            k = j;
+    private void sink(int current) {
+        while (current * 2 <= index) {
+            int child = current * 2;
+            if (child < index && store[child] > store[child + 1]) child++;
+            if (store[current] < store[child]) break;
+            swap(store, current, child);
+            current = child;
+        }
+    }
+
+    private void swim(int current) {
+        while (current / 2 != 0 && store[current] < store[current / 2]) {
+            swap(store, current, current / 2);
+            current = current / 2;
         }
     }
 }

@@ -17,8 +17,8 @@ public class KruskalsMST {
         Collections.sort(graph);
         QuickUnion quickUnion = new QuickUnion(graph.size()*2);
         for(Edge e : graph) {
-            if(!quickUnion.isConnected(e.u, e.v)) {
-                quickUnion.union(e.u, e.v);
+            if(!quickUnion.isConnected(e.vertexOne, e.vertexTwo)) {
+                quickUnion.union(e.vertexOne, e.vertexTwo);
                 mst.add(e);
             }
         }
@@ -27,13 +27,13 @@ public class KruskalsMST {
 }
 
 class Edge implements Comparable{
-    int u;
-    int v;
+    int vertexOne;
+    int vertexTwo;
     int cost;
 
-    Edge(int u, int v, int cost) {
-        this.u = u;
-        this.v = v;
+    Edge(int vertexOne, int vertexTwo, int cost) {
+        this.vertexOne = vertexOne;
+        this.vertexTwo = vertexTwo;
         this.cost = cost;
     }
 
