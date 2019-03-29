@@ -54,7 +54,7 @@ public class KruskalsMSTTest {
         graph.add(new Edge(5, 7, 9));
         graph.add(new Edge(6, 7, 11));
         graph.add(new Edge(4, 2, 9));
-        graph.add(new Edge(4, 2, 9));
+        graph.add(new Edge(4, 5, 15));
         graph.add(new Edge(2, 5, 7));
         return graph;
     }
