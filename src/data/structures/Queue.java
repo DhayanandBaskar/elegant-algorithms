@@ -1,12 +1,12 @@
 package data.structures;
 
+import java.util.NoSuchElementException;
+
 /**
  * Time complexity - push: O(1), pop: O(1)
  */
 
-public class LinkedStack {
-
-    Node first;
+public class Queue {
 
     private class Node {
 
@@ -18,14 +18,18 @@ public class LinkedStack {
         Node next;
     }
 
-    public void push(int element) {
-        Node temp = new Node(element);
-        temp.next = first;
-        first = temp;
+    Node first;
+    Node last;
+
+    public void enqueue(int element) {
+        Node old = last;
+        last = new Node(element);
+        if (isEmpty()) first = last;
+        else old.next = last;
     }
 
-    public int pop() {
-        if (isEmpty()) throw new StackOverflowError();
+    public int dequeue() {
+        if (isEmpty()) throw new NoSuchElementException();
         int result = first.data;
         first = first.next;
         return result;
