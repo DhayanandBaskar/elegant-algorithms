@@ -1,4 +1,4 @@
-package data.structures;
+package dataStructures;
 
 import org.junit.Test;
 

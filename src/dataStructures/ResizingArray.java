@@ -1,4 +1,4 @@
-package data.structures;
+package dataStructures;
 
 /**
  * Time complexity - add: O(1), get: O(1), remove: O(n)

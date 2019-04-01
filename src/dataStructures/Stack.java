@@ -1,4 +1,4 @@
-package data.structures;
+package dataStructures;
 
 /**
  * Time complexity - push: O(n), pop: O(n)

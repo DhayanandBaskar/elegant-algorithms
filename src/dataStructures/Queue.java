@@ -1,4 +1,4 @@
-package data.structures;
+package dataStructures;
 
 import java.util.NoSuchElementException;
 
