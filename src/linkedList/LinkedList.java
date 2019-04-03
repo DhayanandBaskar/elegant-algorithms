@@ -4,6 +4,7 @@ package linkedList;
  * Time complexity
  * linkFirst, linkLast - O(1)
  * linkBetween - O(1)
+ * find = O(n)
  */
 
 public class LinkedList {
@@ -13,8 +14,8 @@ public class LinkedList {
 
     public class Node {
         private int data;
-        private Node next;
-        private Node prev;
+        protected Node next;
+        protected Node prev;
 
         Node(int data) {
             this.data = data;
@@ -36,7 +37,7 @@ public class LinkedList {
     public void linkFirst(int data) {
         Node old = first;
         first = new Node(data);
-        if(last == null) {
+        if (last == null) {
             last = first;
         } else {
             first.next = old;
@@ -56,6 +57,15 @@ public class LinkedList {
         temp.prev = node;
         temp.next = node.next;
         node.next = temp;
+    }
+
+    public Node find(int data) {
+        Node current = first;
+        while (current != null) {
+            if (data == current.getData()) return current;
+            current = current.next;
+        }
+        return null;
     }
 
     public Node getFirst() {
