@@ -12,19 +12,19 @@ import java.util.HashMap;
 
 public class Trie {
 
-    Node root;
+    protected Node root;
 
     Trie() {
         root = new Node();
     }
 
-    private class Node {
+    protected class Node {
         boolean end;
         int count;
         HashMap<Character, Node> children;
 
         Node() {
-            children = new HashMap<>(26);
+            children = new HashMap<>();
         }
     }
 
