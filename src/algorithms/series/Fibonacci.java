@@ -1,18 +1,23 @@
 package algorithms.series;
 
 /**
- * Technique: Dynamic Programming
  * Time Complexity = O(n)
  * Space Complexity = O(n)
  */
 
 public class Fibonacci {
     public int[] fibo(int n) {
-        int[] a = new int[n];
-        a[1] = 1;
+        int[] output = new int[n];
+        int a = 0, b = 1;
+        output[0] = a;
+        output[1] = b;
+
         for (int i = 2; i < n; i++) {
-            a[i] = a[i - 1] + a[i - 2];
+            int c = a + b;
+            output[i] = c;
+            a = b;
+            b = c;
         }
-        return a;
+        return output;
     }
 }
