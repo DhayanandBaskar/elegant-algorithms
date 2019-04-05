@@ -14,5 +14,4 @@ public class InsertionSortTest {
         insertionSort.sort(a);
         assertArrayEquals(expected, a);
     }
-
 }

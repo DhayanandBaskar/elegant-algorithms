@@ -8,6 +8,9 @@ import java.util.HashMap;
  * n -> number of strings
  * Insert - O(l*n)
  * Search - O(l)
+ *
+ * A data structure that trades store for speed.
+ * Real time example: search auto complete or suggestions
  */
 
 public class Trie {

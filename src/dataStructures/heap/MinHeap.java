@@ -11,8 +11,8 @@ public class MinHeap {
     int index = 0;
     int[] store;
 
-    MinHeap(int n) {
-        store = new int[n];
+    public MinHeap(int n) {
+        store = new int[n + 1];
     }
 
     public void add(int item) {

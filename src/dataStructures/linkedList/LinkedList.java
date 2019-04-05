@@ -4,7 +4,7 @@ package dataStructures.linkedList;
  * Time complexity
  * linkFirst, linkLast - O(1)
  * linkBetween - O(1)
- * find = O(n)
+ * find - O(n)
  */
 
 public class LinkedList {
