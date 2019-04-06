@@ -1,7 +1,7 @@
 package algorithms.graph;
 
 import com.sun.istack.internal.NotNull;
-import algorithms.unionfind.QuickUnion;
+import algorithms.unionFind.QuickUnion;
 
 import java.util.ArrayList;
 import java.util.Collections;

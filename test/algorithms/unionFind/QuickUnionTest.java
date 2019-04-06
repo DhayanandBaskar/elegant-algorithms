@@ -1,4 +1,4 @@
-package algorithms.unionfind;
+package algorithms.unionFind;
 
 import org.junit.Test;
 
