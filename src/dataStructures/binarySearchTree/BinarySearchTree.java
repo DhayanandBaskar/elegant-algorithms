@@ -14,10 +14,12 @@ public class BinarySearchTree {
         protected int val;
         protected Node left;
         protected Node right;
+        protected int count;
 
         Node(int key, int val) {
             this.key = key;
             this.val = val;
+            this.count = 1;
         }
 
         public int getVal() {
@@ -29,6 +31,31 @@ public class BinarySearchTree {
         root = put(root, key, val);
     }
 
+    public Node get(int key) {
+        return get(root, key);
+    }
+
+    public int size() {
+        return size(root);
+    }
+
+    public int rank(int key) {
+        return rank(root, key);
+    }
+
+    private int rank(Node x, int key) {
+        if (x == null) return 0;
+
+        if (key < x.key) return rank(x.left, key);
+        else if (key > x.key) return 1 + size(x.left) + rank(x.right, key);
+        else return size(x.left);
+    }
+
+    private int size(Node x) {
+        if (x == null) return 0;
+        return x.count;
+    }
+
     private Node put(Node x, int key, int val) {
         if (x == null) return new Node(key, val);
 
@@ -38,11 +65,8 @@ public class BinarySearchTree {
             x.right = put(x.right, key, val);
         else
             x.val = val;
+        x.count = 1 + size(x.left) + size(x.right);
         return x;
-    }
-
-    public Node get(int key) {
-        return get(root, key);
     }
 
     private Node get(Node x, int key) {
