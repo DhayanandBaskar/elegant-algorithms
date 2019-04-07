@@ -7,13 +7,13 @@ package dataStructures.binarySearchTree;
 
 public class BinarySearchTree {
 
-    Node root;
+    protected Node root;
 
     public class Node {
-        private int key;
-        private int val;
-        private Node left;
-        private Node right;
+        protected int key;
+        protected int val;
+        protected Node left;
+        protected Node right;
 
         Node(int key, int val) {
             this.key = key;
