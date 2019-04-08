@@ -1,7 +1,7 @@
 package dataStructures.binarySearchTree;
 
 /**
- * Time complexity - worst case - search/insert- O(h) where h is the height of the tree
+ * Time complexity - worst case - search/insert/rank - O(h) where h is the height of the tree
  * it take at least O(log n) compares to find a node
  */
 
@@ -51,7 +51,7 @@ public class BinarySearchTree {
         else return size(x.left);
     }
 
-    private int size(Node x) {
+    protected int size(Node x) {
         if (x == null) return 0;
         return x.count;
     }
