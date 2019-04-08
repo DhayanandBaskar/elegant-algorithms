@@ -69,17 +69,11 @@ public class DijkstrasShortestPath {
                 Vertex adjacent = entry.getKey();
                 int newDistance = current.distanceFromSource + entry.getValue();
 
-                if (adjacent.distanceFromSource == Integer.MAX_VALUE) {
+                if (newDistance < adjacent.distanceFromSource) {
                     adjacent.distanceFromSource = newDistance;
                     adjacent.parent = current;
+                    if (queue.contains(adjacent)) queue.remove(adjacent);
                     queue.add(adjacent);
-                } else {
-                    if(newDistance < adjacent.distanceFromSource) {
-                        adjacent.distanceFromSource = newDistance;
-                        adjacent.parent = current;
-                        queue.remove(adjacent);
-                        queue.add(adjacent);
-                    }
                 }
             }
         }
