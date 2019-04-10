@@ -43,6 +43,10 @@ public class BinarySearchTree {
         return rank(root, key);
     }
 
+    public boolean contains(int key) {
+        return get(key) != null;
+    }
+
     private int rank(Node x, int key) {
         if (x == null) return 0;
 
