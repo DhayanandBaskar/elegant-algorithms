@@ -1,5 +1,7 @@
 package dataStructures.heap;
 
+import java.util.Arrays;
+
 import static utils.Util.swap;
 
 /**
@@ -13,6 +15,11 @@ public class MinHeap {
 
     public MinHeap(int n) {
         store = new int[n + 1];
+    }
+
+    public MinHeap(MinHeap copy) {
+        index = copy.size();
+        store = copy.getAll();
     }
 
     public void add(int item) {
@@ -30,6 +37,23 @@ public class MinHeap {
         return store[1];
     }
 
+    public boolean isEmpty() {
+        return index == 0;
+    }
+
+    public int peek() {
+        if (isEmpty()) throw new Empty();
+        return store[1];
+    }
+
+    public int size() {
+        return index;
+    }
+
+    public int[] getAll() {
+        return Arrays.copyOfRange(store, 0, index + 1);
+    }
+
     private void sink(int current) {
         while (current * 2 <= index) {
             int child = current * 2;
@@ -45,5 +69,8 @@ public class MinHeap {
             swap(store, current, current / 2);
             current = current / 2;
         }
+    }
+
+    public static class Empty extends RuntimeException {
     }
 }
